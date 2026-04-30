@@ -35,3 +35,118 @@ To enhance system functionality and make it more realistic, the following entiti
 
 Each entity has been selected based on its independent existence, ability to store multiple records, and importance in hospital operations. These entities ensure that the system captures all essential aspects of hospital data while supporting efficient data organization and retrieval.
 
+## 2.2 Attribute Definition
+
+In this section, attributes for each identified entity are defined. Attributes represent the properties of entities and are carefully selected to ensure data integrity, avoid redundancy, and support normalization up to Boyce-Codd Normal Form (BCNF).
+
+Each entity includes a primary key (PK) to uniquely identify records and foreign keys (FK) where relationships exist between entities.
+
+### Patient
+
+| Attribute        | Description                         | Key |
+|------------------|-------------------------------------|-----|
+| patient_id       | Unique identifier for each patient  | PK  |
+| full_name        | Patient's full name                 |     |
+| gender           | Gender of the patient               |     |
+| date_of_birth    | Date of birth                       |     |
+| phone            | Contact number                      |     |
+| address          | Residential address                 |     |
+| blood_group      | Blood type                          |     |
+
+### Doctor
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| doctor_id        | Unique identifier for each doctor    | PK  |
+| full_name        | Doctor's full name                   |     |
+| specialization   | Medical specialization               |     |
+| phone            | Contact number                       |     |
+| department_id    | Associated department                | FK  |
+
+### Department
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| department_id    | Unique identifier for department     | PK  |
+| department_name  | Name of department                   |     |
+| location         | Department location                  |     |
+
+### Appointment
+
+| Attribute           | Description                         | Key |
+|---------------------|-------------------------------------|-----|
+| appointment_id      | Unique appointment ID               | PK  |
+| patient_id          | Associated patient                  | FK  |
+| doctor_id           | Assigned doctor                     | FK  |
+| appointment_date    | Date of appointment                 |     |
+| appointment_time    | Time of appointment                 |     |
+| status              | Status of appointment               |     |
+
+### Medical_Record
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| record_id        | Unique medical record ID             | PK  |
+| patient_id       | Associated patient                   | FK  |
+| diagnosis        | Diagnosed condition                  |     |
+| treatment        | Treatment details                    |     |
+| record_date      | Date of record                       |     |
+
+### Prescription
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| prescription_id  | Unique prescription ID               | PK  |
+| record_id        | Linked medical record                | FK  |
+| medicine_name    | Name of medicine                     |     |
+| dosage           | Dosage instructions                  |     |
+| duration         | Duration of medication               |     |
+
+### Billing
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| bill_id          | Unique billing ID                    | PK  |
+| patient_id       | Associated patient                   | FK  |
+| total_amount     | Total bill amount                    |     |
+| bill_date        | Date of billing                      |     |
+
+### Payment
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| payment_id       | Unique payment ID                    | PK  |
+| bill_id          | Related billing record               | FK  |
+| payment_method   | Method of payment                    |     |
+| payment_date     | Date of payment                      |     |
+| amount_paid      | Amount paid                          |     |
+
+### Queue
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| queue_id         | Unique queue ID                      | PK  |
+| appointment_id   | Related appointment                  | FK  |
+| queue_number     | Position in queue                    |     |
+| priority_level   | Priority level (normal/emergency)    |     |
+| estimated_time   | Estimated waiting time               |     |
+
+### Emergency_Case
+
+| Attribute        | Description                          | Key |
+|------------------|--------------------------------------|-----|
+| emergency_id     | Unique emergency case ID             | PK  |
+| patient_id       | Associated patient                   | FK  |
+| severity_level   | Level of urgency                     |     |
+| arrival_time     | Time of arrival                      |     |
+
+
+### 2.2.1 Attribute Design Considerations
+
+The attributes are carefully selected to ensure:
+- Atomic values (1NF compliance)
+- No redundant or duplicate data
+- Proper use of foreign keys to maintain relationships
+- Avoidance of derived attributes such as calculated totals where unnecessary
+
+This design supports efficient querying and smooth normalization in subsequent steps.
