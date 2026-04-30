@@ -150,3 +150,61 @@ The attributes are carefully selected to ensure:
 - Avoidance of derived attributes such as calculated totals where unnecessary
 
 This design supports efficient querying and smooth normalization in subsequent steps.
+
+
+## 2.3 Relationship Modeling
+
+This section defines the relationships between the identified entities in the Hospital Management System. Relationships describe how entities are associated with each other and are essential for constructing the ER diagram and ensuring data integrity.
+
+Each relationship is analyzed based on its cardinality (one-to-one, one-to-many, or many-to-many) and business logic within the hospital environment.
+
+### Core Relationships
+
+1. Patient – Appointment  
+A patient can book multiple appointments, but each appointment is associated with one patient.  
+Cardinality: 1:M
+
+2. Doctor – Appointment  
+A doctor can handle multiple appointments, but each appointment is assigned to one doctor.  
+Cardinality: 1:M
+
+3. Doctor – Department  
+Each doctor belongs to one department, while a department can have multiple doctors.  
+Cardinality: M:1
+
+### Medical Relationships
+
+4. Patient – Medical_Record  
+A patient can have multiple medical records, but each record belongs to one patient.  
+Cardinality: 1:M
+
+5. Medical_Record – Prescription  
+Each medical record can include multiple prescriptions, but each prescription is linked to one medical record.  
+Cardinality: 1:M
+
+### Financial Relationships
+
+6. Patient – Billing  
+A patient can generate multiple billing records, but each bill is associated with one patient.  
+Cardinality: 1:M
+
+7. Billing – Payment  
+A billing record can have multiple payments (e.g., partial payments), but each payment is linked to one bill.  
+Cardinality: 1:M
+
+### Advanced Feature Relationships
+
+8. Appointment – Queue  
+Each appointment is assigned one queue record for managing waiting order, and each queue entry corresponds to one appointment.  
+Cardinality: 1:1
+
+9. Patient – Emergency_Case  
+A patient may have multiple emergency cases over time, but each emergency case is associated with one patient.  
+Cardinality: 1:M
+
+
+### 2.3.5 Relationship Design Considerations
+
+The relationships are defined based on real-world hospital workflows to ensure logical consistency and efficient data representation. One-to-many relationships are used where entities naturally have multiple associated records, while one-to-one relationships are applied where strict pairing is required, such as in queue management.
+
+These relationships are designed to minimize redundancy and support normalization up to BCNF.
