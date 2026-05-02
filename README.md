@@ -3,7 +3,7 @@
 
 ## Group Members
 - Hundaol Begna......ETS0756/17
-- Kadir Lamecha......ETS0821/17
+- Kedir Lemecha......ETS0821/17
 - Isaac Assefa.......ETS0766/17
 - Gemmachu Fikadu....ETS0628/17
 - Ifa Silashi........ETS0764/17
