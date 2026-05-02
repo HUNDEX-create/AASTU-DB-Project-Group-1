@@ -220,10 +220,6 @@ INSERT INTO Payment (payment_method, payment_date, amount_paid, bill_id) VALUES
 
 
 
-SELECT d.department_name, SUM(b.total_amount) as total_revenue
-FROM Department d
-JOIN Doctor dr ON d.department_id = dr.department_id
-JOIN Appointment a ON dr.doctor_id = a.doctor_id
-JOIN Patient p ON a.patient_id = p.patient_id
-JOIN Billing b ON p.patient_id = b.patient_id
-GROUP BY d.department_name;
+SELECT payment_method, SUM(amount_paid) AS total_revenue
+FROM Payment
+GROUP BY payment_method;
