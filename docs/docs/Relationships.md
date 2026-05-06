@@ -1,4 +1,5 @@
 Relationship Modeling
+
 This section describes the relationships between entities in the Hospital Management System. Each relationship is defined based on real-world hospital operations and includes its cardinality.
 
 Core Relationships
