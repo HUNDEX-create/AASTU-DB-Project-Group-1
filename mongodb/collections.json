@@ -1,0 +1,83 @@
+{
+  "patients": [
+    {
+      "_id": "P001",
+      "name": "Abebe Kebede",
+      "age": 34,
+      "gender": "Male",
+      "phone": "+251911234567",
+      "address": "Addis Ababa, Bole",
+      "bloodGroup": "A+",
+      "allergies": ["Penicillin"],
+      "createdAt": "2025-04-01T10:00:00Z"
+    },
+    {
+      "_id": "P002",
+      "name": "Fatuma Ahmed",
+      "age": 28,
+      "gender": "Female",
+      "phone": "+251922345678",
+      "address": "Addis Ababa, Piassa",
+      "bloodGroup": "O-",
+      "createdAt": "2025-04-05T14:30:00Z"
+    }
+  ],
+
+  "doctors": [
+    {
+      "_id": "D001",
+      "name": "Dr. Mekonnen Tadesse",
+      "specialty": "Cardiology",
+      "phone": "+251911876543",
+      "experienceYears": 12,
+      "availability": ["Monday", "Wednesday", "Friday"]
+    },
+    {
+      "_id": "D002",
+      "name": "Dr. Selamawit Girma",
+      "specialty": "Pediatrics",
+      "phone": "+251922987654",
+      "experienceYears": 8,
+      "availability": ["Tuesday", "Thursday"]
+    }
+  ],
+
+  "appointments": [
+    {
+      "_id": "A001",
+      "patientId": "P001",
+      "doctorId": "D001",
+      "appointmentDate": "2025-05-10T09:00:00Z",
+      "status": "Scheduled",
+      "reason": "Chest pain follow-up",
+      "createdAt": "2025-05-01T08:00:00Z"
+    }
+  ],
+
+  "bills": [
+    {
+      "_id": "B001",
+      "patientId": "P001",
+      "appointmentId": "A001",
+      "amount": 1250.00,
+      "currency": "ETB",
+      "status": "Paid",
+      "paymentDate": "2025-05-10T10:30:00Z",
+      "items": [
+        { "description": "Consultation", "price": 800 },
+        { "description": "ECG", "price": 450 }
+      ]
+    }
+  ],
+
+  "medical_records": [
+    {
+      "patientId": "P001",
+      "doctorId": "D001",
+      "date": "2025-05-10T09:30:00Z",
+      "diagnosis": "Mild Hypertension",
+      "prescription": ["Amlodipine 5mg", "Lifestyle changes"],
+      "notes": "Patient advised to reduce salt intake"
+    }
+  ]
+}
