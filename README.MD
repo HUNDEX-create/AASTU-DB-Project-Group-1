@@ -1,9 +1,9 @@
 # Hospital Management System - MongoDB
 
-## 📌 Overview
+##  Overview
 This project implements a Hospital Management System using MongoDB (NoSQL).
 
-## 🧠 Design Approach
+## Design Approach
 - Embedded:
   - Medical records inside patients
   - Prescriptions inside records
@@ -14,19 +14,19 @@ This project implements a Hospital Management System using MongoDB (NoSQL).
   - Departments
   - Appointments
 
-## 📂 Collections
+## Collections
 - patients
 - doctors
 - departments
 - appointments
 - billing
 
-## 🚀 Features
+##  Features
 - Patient medical history
 - Queue management
 - Emergency handling
 - Billing and payments
 
-## ▶️ How to Run
+##  How to Run
 1. Start MongoDB
 2. Import JSON files:
