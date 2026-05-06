@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "P001",
+    "full_name": "Abel Tesfaye",
+    "gender": "Male",
+    "date_of_birth": "1995-06-12",
+    "phone": "0912345678",
+    "address": "Addis Ababa",
+    "blood_group": "O+",
+    "medical_records": [
+      {
+        "record_id": "R001",
+        "diagnosis": "Malaria",
+        "treatment": "Medication",
+        "record_date": "2026-05-01",
+        "prescriptions": [
+          {
+            "prescription_id": "PR001",
+            "medicine_name": "Coartem",
+            "dosage": "2 tablets",
+            "duration": "3 days"
+          }
+        ]
+      }
+    ],
+    "emergency_cases": [
+      {
+        "emergency_id": "E001",
+        "severity_level": "High",
+        "arrival_time": "2026-05-02T10:30:00"
+      }
+    ]
+  }
+]

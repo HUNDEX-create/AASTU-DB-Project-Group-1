@@ -1,0 +1,9 @@
+[
+  {
+    "_id": "D001",
+    "full_name": "Dr. Hana Bekele",
+    "specialization": "Cardiology",
+    "phone": "0987654321",
+    "department_id": "DEP01"
+  }
+]

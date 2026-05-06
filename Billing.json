@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "B001",
+    "patient_id": "P001",
+    "total_amount": 1500,
+    "bill_date": "2026-05-10",
+    "payments": [
+      {
+        "payment_id": "PAY001",
+        "payment_method": "Cash",
+        "payment_date": "2026-05-10",
+        "amount_paid": 1000
+      },
+      {
+        "payment_id": "PAY002",
+        "payment_method": "Mobile Money",
+        "payment_date": "2026-05-11",
+        "amount_paid": 500
+      }
+    ]
+  }
+]

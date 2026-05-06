@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "A001",
+    "patient_id": "P001",
+    "doctor_id": "D001",
+    "appointment_date": "2026-05-10",
+    "appointment_time": "10:00 AM",
+    "status": "Scheduled",
+    "queue": {
+      "queue_id": "Q001",
+      "queue_number": 5,
+      "priority_level": "Normal",
+      "estimated_time": "30 mins"
+    }
+  }
+]
