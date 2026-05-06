@@ -1,4 +1,4 @@
-# AASTU-DB-Project-Group-1
+# OLD-AASTU-DB-Project-Group-1
 # Hospital Management System (HMS)
 
 ## Group Members
