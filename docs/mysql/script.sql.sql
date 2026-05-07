@@ -228,3 +228,51 @@ This provides a summary of revenue generated through each payment channel and is
 SELECT payment_method, SUM(amount_paid) AS total_revenue
 FROM Payment
 GROUP BY payment_method;
+
+
+
+-- department location sorting query
+SELECT 
+    department_name AS Department,
+    location AS Full_Location,
+    SUBSTRING_INDEX(location, ',', 1) AS Building_Block,
+    TRIM(SUBSTRING_INDEX(location, ',', -1)) AS Floor_Level
+FROM Department
+ORDER BY Building_Block, department_name;
+
+
+-- Patients Grouped by Region
+SELECT 
+    TRIM(SUBSTRING_INDEX(address, ',', -1)) AS region,
+    COUNT(*) AS total_patients,
+    COUNT(CASE WHEN gender = 'M' THEN 1 END) AS male,
+    COUNT(CASE WHEN gender = 'F' THEN 1 END) AS female,
+    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM Patient), 2) AS percentage
+FROM Patient
+WHERE address IS NOT NULL 
+  AND address LIKE '%,%'
+GROUP BY region
+ORDER BY total_patients DESC;
+
+
+-- Detailed List of Blood Type O Patients
+SELECT 
+    p.patient_id,
+    p.full_name,
+    p.gender,
+    p.date_of_birth,
+    TIMESTAMPDIFF(YEAR, p.date_of_birth, CURRENT_DATE) AS age,
+    p.phone,
+    p.address,
+    p.blood_group,
+    COUNT(a.appointment_id) AS total_appointments
+FROM Patient p
+LEFT JOIN Appointment a ON p.patient_id = a.patient_id
+WHERE p.blood_group IN ('O+', 'O-', 'O')
+GROUP BY p.patient_id, p.full_name, p.gender, p.date_of_birth, 
+         p.phone, p.address, p.blood_group
+ORDER BY p.full_name;
+
+
+
+
